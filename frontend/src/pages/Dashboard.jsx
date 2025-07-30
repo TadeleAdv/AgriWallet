@@ -49,9 +49,9 @@ const Dashboard = () => {
         {/* Recent Transactions */}
         <div className="card">
           <h2 className="text-lg font-semibold mb-4">Recent Transactions</h2>
-          <div className="space-y-4">
+          <div className="grid gap-3">
             {recentTransactions.map((transaction) => (
-              <div key={transaction.id} className="flex justify-between items-center">
+              <div key={transaction.id} className="p-3 border rounded-lg flex justify-between items-center">
                 <div>
                   <p className="font-medium">{transaction.description}</p>
                   <p className="text-sm text-gray-600">{transaction.date}</p>
@@ -70,14 +70,36 @@ const Dashboard = () => {
             <Bell size={20} className="mr-2" />
             <h2 className="text-lg font-semibold">Recent Notifications</h2>
           </div>
-          <div className="space-y-4">
+          <div className="grid gap-3">
             {mockNotifications.slice(0, 3).map((notification) => (
-              <div key={notification.id} className={`p-3 rounded-lg ${notification.read ? 'bg-gray-50' : 'bg-blue-50'}`}>
+              <div key={notification.id} className={`p-3 rounded-lg border ${notification.read ? 'bg-gray-50' : 'bg-blue-50'}`}>
                 <p className="font-medium">{notification.title}</p>
                 <p className="text-sm text-gray-600">{notification.message}</p>
                 <p className="text-xs text-gray-500 mt-1">{notification.date}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Actions Grid */}
+      <div className="card mt-6">
+        <h2 className="text-lg font-semibold mb-4">Quick Actions</h2>
+        <div className="grid grid-3">
+          <div className="p-4 border rounded-lg text-center hover:bg-green-50 cursor-pointer">
+            <Wallet className="text-green-600 mx-auto mb-2" size={32} />
+            <p className="font-medium">Add Funds</p>
+            <p className="text-sm text-gray-600">Top up wallet</p>
+          </div>
+          <div className="p-4 border rounded-lg text-center hover:bg-blue-50 cursor-pointer">
+            <Gift className="text-blue-600 mx-auto mb-2" size={32} />
+            <p className="font-medium">Apply Subsidy</p>
+            <p className="text-sm text-gray-600">Get government support</p>
+          </div>
+          <div className="p-4 border rounded-lg text-center hover:bg-orange-50 cursor-pointer">
+            <TrendingUp className="text-orange-600 mx-auto mb-2" size={32} />
+            <p className="font-medium">Set Savings Goal</p>
+            <p className="text-sm text-gray-600">Plan for future</p>
           </div>
         </div>
       </div>

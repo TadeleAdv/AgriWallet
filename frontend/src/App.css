@@ -229,6 +229,8 @@ body {
 .hover\:bg-red-50:hover { background-color: #fef2f2; }
 .hover\:bg-orange-50:hover { background-color: #fff7ed; }
 
+.cursor-pointer { cursor: pointer; }
+
 .last\:border-b-0:last-child { border-bottom: none; }
 
 .progress-bar {
